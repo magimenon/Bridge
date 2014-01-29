@@ -1,0 +1,110 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*general*/
+
+body{
+
+    width: 100%;
+}
+
+#pageHeader {
+    background-color: white;
+    color: black;
+    font-size: 2.5em;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-bottom: 2px solid black;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+aside {
+    padding-left: 2%;
+    padding-right: 2%;
+    border-right:  2px solid black;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+aside button {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: #a1a1a1;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#mid-section-container {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+.candidateForm {
+    width: 100%;
+    padding-left: 5%;
+}
+.candidateForm label {
+    width: 200px;
+    padding-bottom: 2%;
+    padding-top: 3%;
+}
+.candidateForm button {
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+
+    .center {
+        text-align: center;
+    }

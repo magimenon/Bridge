@@ -1,0 +1,159 @@
+<html>
+<meta charset="UTF-8"/>
+<title>Backbone.js Employee</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/screen.css">
+<link rel="stylesheet" href="css/start.css">
+</head>
+<body>
+<header id="pageHeader">
+   <div>
+    BRIDGE
+   </div>
+</header>
+<div id="container">
+    <aside >
+
+    </aside>
+    <section id="mid-section-container" >
+
+    </section>
+</div>
+
+
+<script id="candidateHeaderTemplate" type="text/template">
+  <div id="mid-Section" class="mid-Section">
+      <div id="addDelUpd" ></div>
+      <button id="add-employee" class="btn btn-primary ">Add</button>
+     <div id="row-container">
+        <div class="col-md-4">NAME</div>
+        <div class="col-md-4">EMAIL</div>
+        <div class="col-md-4">TOTAL YEARS</div>
+        </div>
+     </div>
+</script>
+
+        <script id="addCandidate" type="text/template">
+<form id="addCandidateForm" action="#" class="candidateForm">
+<label for="name">NAME: </label><input id="name"  placeholder="name" type="text" />   </br>
+<label for="emailId">EMAIL: </label><input id="emailId"  placeholder= "email" type="email" />   </br>
+<label for="totalYears">TOTAL YEARS: </label><input id="totalYears" placeholder= "years" type="text" />  </br>
+<div id="skillSet">
+    <label for="SkillSet">Skill: </label><input class="SkillSet" placeholder= "SkillSet" type="text" />
+    <input class="years" placeholder= "years" type="number" />
+    <button id="addSkillSet">Add</button>
+</div>
+
+    <label for="Result">Result: </label> <select id="Result">
+    <option >select</option>
+    <option value="saab">Selected</option>
+    <option value="opel">Rejected</option>
+</select>   </br>
+    
+ <div class="center">
+<button id="add">Add</button>
+    <button id="cancel">cancel</button>
+ </div>
+</form>
+        </script>
+
+<script id="deleteCandidate" type="text/template">
+    <form id="deleteCandidateForm" action="#" class="candidateForm">
+        <label for="name">NAME: </label><input id="name" value= <%= name ? name:"" %>  type="text" />   </br>
+        <label for="emailId">EMAIL: </label><input id="emailId" value= <%= emailId ? emailId:"" %> type="email" />   </br>
+        <label for="totalYears">TOTAL YEARS: </label><input id="totalYears" value = <%= totalYears ? totalYears:"" %>  type="text" />  </br>
+        <div id="skillSet">
+        <% for(var i=0 ;i < SkillSet.length  ;i++){
+           _.each(SkillSet[i] ,function( val,key){ %>
+            <label for="SkillSet">SkillSet </label>
+            <select>
+            <option value=<%= key%> ><%= key %></option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="PHP">PHP</option>
+           </select>
+            <input class="totalYears" value = <%= val ? val:0 %>  type="number" />
+            <%  if( i === SkillSet.length-1) { %>
+            <button id="addSkillSet">Add</button>
+            <% }  %>
+            </br>
+            <%  }) %>
+
+      <%  } %>
+ 
+        </div> </br>
+
+        <button id="Delete">Delete</button>
+        <button id="Update">Update</button>
+    </form>
+</script>
+
+<script id="candidateTemplate" type="text/template">
+    <div class="keyClick">
+        <div class="col-md-4"><%= name %></div>
+        <div class="col-md-4"><%= emailId %></div>
+        <div class="col-md-4"><%= totalYears %></div>
+    </div>
+</script>
+
+<script id="comboBoxtem" type="text/template">
+    <label for="interViewRound"><%= level %> </label><input class="interViewRound" placeholder="level" type="number">
+    <select>
+    <option >select</option>
+    <option value="Selected">Selected</option>
+    <option value="Rejected">Rejected</option>
+    <option value="waiting">waiting</option>
+</select> <button id="addRound">Add</button>
+</script>
+ 
+    
+<script id="homeTemplate" type="text/template">
+
+   <button class="routeButton"><%= name %> </button>
+</script>
+
+<script id="scheduleTemplate" type="text/template">
+
+  Currently no interview has been scheduled today <button id="schedule_interview" value="schedule">Schedule an Interview</button>
+
+</script>
+
+<script id="analytics" type="text/template">
+
+   comming soon
+
+</script>
+    
+<script src="lib/jquery-1.7.1.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone.js"></script>
+<script src="js/view/comboBoxView.js"></script>
+<script src="js/model/startModel.js"></script>
+<script src="js/model/EmployeeModel.js"></script>
+<script src="js/collection/EmployeeModelCol.js"></script>
+<script src="js/view/deleteEmployee.js"></script>
+ <script src="js/view/addEmployee.js"></script>
+<script src="js/view/EmployeeView.js"></script>
+<script src="js/view/employeersView.js"></script>
+<script src="js/view/StartView.js"></script>
+<script src="js/view/scheduleInterview.js"></script>
+<script src="js/view/scheduleView.js"></script>
+<script src="js/view/analyticsView.js"></script>
+<script src="router.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>-->
+<!--<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>-->
+<!--<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-audio.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-video.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>-->
+<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>-->
+<!--<script src="js/fileUpload/file_upload.js"></script>-->
+<script src="app.js"></script>
+</body>
+</html>
+    
