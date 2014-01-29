@@ -6,8 +6,6 @@ bridge.HomeView = Backbone.View.extend({
 
 
     initialize : function(dataArray){
-        bridge.bridgeRouter = new bridge.router();
-        Backbone.history.start();
         bridge.homeCollectionobj = new bridge.homeCollection(dataArray);
         bridge.scheduleInterviewObj = new bridge.scheduleInterview();
         bridge.scheduleInterviewObj.render();
@@ -15,6 +13,7 @@ bridge.HomeView = Backbone.View.extend({
     },
 
     render : function(){
+        this.$el.html("");
         bridge.homeCollectionobj.each(function(modelObj){
             this.renderEmployee(modelObj);
         },this)

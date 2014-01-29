@@ -64,6 +64,12 @@ background-color: #459300;
             padding: 8px;
             font-size: 13px;
 }
+button:hover {
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+            text-shadow: #050505 0 -1px 2px;
+            background-color: #a4d04a;
+            color: #fff;
+        }
 #pageHeader a {
     font-size: 15px;
     float: right;

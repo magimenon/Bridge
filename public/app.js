@@ -32,5 +32,7 @@ $(function() {
             description:"" ,
             route :"analytics"
         }]
+    bridge.bridgeRouter = new bridge.router();
+        Backbone.history.start();
     new bridge.HomeView(app.homeItem);
 });
