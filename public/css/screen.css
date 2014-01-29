@@ -66,13 +66,18 @@ body{
     padding-right: 5%;
 }
 
+#container {
+    background-color: #000;
+    color: #fff;
+}
+
 aside {
+    border-right: 2px solid #FFFFFF;
+    float: left;
+    height: 100%;
     padding-left: 2%;
     padding-right: 2%;
-    border-right:  2px solid black;
     width: 20%;
-    height: 100%;
-    float: left;
 }
 aside button {
     margin-top: 10%;
@@ -84,9 +89,10 @@ aside button {
 }
 
 #mid-section-container {
+     height: 100%;
+    margin-left: 22%;
+    padding-top: 1%;
     width: 80%;
-    height: 100%;
-    margin-left: 20%;
 }
 .candidateForm {
     width: 100%;
