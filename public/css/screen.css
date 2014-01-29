@@ -70,6 +70,25 @@ body{
     background-color: #000;
     color: #fff;
 }
+input.text-input, select.text-input {
+    width: 200px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    border: solid 1px transparent;
+    color: #555;
+    padding: 8px;
+    font-size: 13px;
+}
+
+select {
+    height: 30px;
+}
+
+form .routeButton {
+    float: none;
+}
 
 aside {
     border-right: 2px solid #FFFFFF;

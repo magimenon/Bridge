@@ -35,46 +35,46 @@
 
         <script id="addCandidate" type="text/template">
 <form id="addCandidateForm" action="#" class="candidateForm">
-<label for="name">NAME: </label><input id="name"  placeholder="name" type="text" />   </br>
-<label for="emailId">EMAIL: </label><input id="emailId"  placeholder= "email" type="email" />   </br>
-<label for="totalYears">TOTAL YEARS: </label><input id="totalYears" placeholder= "years" type="text" />  </br>
+<label for="name">NAME: </label><input id="name"   class="text-input" placeholder="Name" type="text" />   </br>
+<label for="emailId">EMAIL: </label><input id="emailId"  class="text-input"  placeholder= "E-mail" type="email" />   </br>
+<label for="totalYears">TOTAL YEARS: </label><input id="totalYears"  class="text-input"  placeholder= "Years" type="text" />  </br>
 <div id="skillSet">
-    <label for="SkillSet">Skill: </label><input class="SkillSet" placeholder= "SkillSet" type="text" />
-    <input class="years" placeholder= "years" type="number" />
-    <button id="addSkillSet">Add</button>
+    <label for="SkillSet">Skill: </label><input class="SkillSet text-input" class="text-input"  placeholder= "SkillSet" type="text" />
+    <input class="years text-input" placeholder= "Years" type="number" />
+    <button id="addSkillSet" class="routeButton">Add</button>
 </div>
 
-    <label for="Result">Result: </label> <select id="Result">
+    <label for="Result">Result: </label> <select class="text-input" id="Result">
     <option >select</option>
     <option value="saab">Selected</option>
     <option value="opel">Rejected</option>
 </select>   </br>
     
  <div class="center">
-<button id="add">Add</button>
-    <button id="cancel">cancel</button>
+<button class="routeButton" id="add">Add</button>
+    <button class="routeButton" id="cancel">cancel</button>
  </div>
 </form>
         </script>
 
 <script id="deleteCandidate" type="text/template">
     <form id="deleteCandidateForm" action="#" class="candidateForm">
-        <label for="name">NAME: </label><input id="name" value= <%= name ? name:"" %>  type="text" />   </br>
-        <label for="emailId">EMAIL: </label><input id="emailId" value= <%= emailId ? emailId:"" %> type="email" />   </br>
-        <label for="totalYears">TOTAL YEARS: </label><input id="totalYears" value = <%= totalYears ? totalYears:"" %>  type="text" />  </br>
+        <label for="name">NAME: </label><input id="name" class="text-input" value= <%= name ? name:"" %>  type="text" />   </br>
+        <label for="emailId">EMAIL: </label><input id="emailId"  class="text-input" value= <%= emailId ? emailId:"" %> type="email" />   </br>
+        <label for="totalYears">TOTAL YEARS: </label><input id="totalYears"  class="text-input" value = <%= totalYears ? totalYears:"" %>  type="text" />  </br>
         <div id="skillSet">
         <% for(var i=0 ;i < SkillSet.length  ;i++){
            _.each(SkillSet[i] ,function( val,key){ %>
             <label for="SkillSet">SkillSet </label>
-            <select>
+            <select class="text-input">
             <option value=<%= key%> ><%= key %></option>
             <option value="JavaScript">JavaScript</option>
             <option value="Java">Java</option>
             <option value="PHP">PHP</option>
            </select>
-            <input class="totalYears" value = <%= val ? val:0 %>  type="number" />
+            <input class="totalYears text-input"  value = <%= val ? val:0 %>  type="number" />
             <%  if( i === SkillSet.length-1) { %>
-            <button id="addSkillSet">Add</button>
+            <button class="routeButton" id="addSkillSet">Add</button>
             <% }  %>
             </br>
             <%  }) %>
@@ -83,8 +83,8 @@
  
         </div> </br>
 
-        <button class="button" id="Delete">Delete</button>
-        <button id="Update">Update</button>
+        <button class="button routeButton" id="Delete">Delete</button>
+        <button class="routeButton" id="Update">Update</button>
     </form>
 </script>
 
@@ -120,7 +120,7 @@
 
 <script id="analytics" type="text/template">
 
-   comming soon
+   coming soon
 
 </script>
     
