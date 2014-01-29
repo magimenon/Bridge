@@ -17,7 +17,7 @@ h4 {
     padding-top: 15px;
     padding-bottom: 15px;
     border: 1px solid #ddd;
-    border: 1px solid rgba(86,61,124,.2);
+    border: 1px solid #fff;
 }
 
 hr {
@@ -36,6 +36,9 @@ hr {
     letter-spacing: 1px;
     padding: 6px 10px;
     text-shadow: 0 -1px 0 #050505;
+}
+#add-employee {
+    margin-bottom: 10px;
 }
 .scheduleButton {
 background-color: #459300;
@@ -60,4 +63,9 @@ background-color: #459300;
             color: #555;
             padding: 8px;
             font-size: 13px;
-        }
+}
+#pageHeader a {
+    font-size: 15px;
+    float: right;
+}
+

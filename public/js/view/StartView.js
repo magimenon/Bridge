@@ -6,9 +6,9 @@ bridge.HomeView = Backbone.View.extend({
 
 
     initialize : function(dataArray){
-            bridge.bridgeRouter = new bridge.router();
-            Backbone.history.start();
-      bridge.homeCollectionobj = new bridge.homeCollection(dataArray);
+        bridge.bridgeRouter = new bridge.router();
+        Backbone.history.start();
+        bridge.homeCollectionobj = new bridge.homeCollection(dataArray);
         bridge.scheduleInterviewObj = new bridge.scheduleInterview();
         bridge.scheduleInterviewObj.render();
         this.render();

@@ -50,8 +50,9 @@ table {
 /*general*/
 
 body{
-
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 100%;
+
 }
 
 #pageHeader {
@@ -64,6 +65,7 @@ body{
     border-bottom: 2px solid black;
     padding-left: 5%;
     padding-right: 5%;
+    text-shadow:0 -1px 0 #050505;
 }
 
 #container {
@@ -71,7 +73,7 @@ body{
     color: #fff;
 }
 input.text-input, select.text-input {
-    width: 200px;
+    width: 250px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -79,11 +81,11 @@ input.text-input, select.text-input {
     border: solid 1px transparent;
     color: #555;
     padding: 8px;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 select {
-    height: 30px;
+    height: 43px;
 }
 
 form .routeButton {
@@ -112,10 +114,13 @@ aside button {
     margin-left: 22%;
     padding-top: 1%;
     width: 80%;
+
 }
 .candidateForm {
-    width: 100%;
+    width: 75%;
     padding-left: 5%;
+    background-color: #808080;
+    border-radius:4px;
 }
 .candidateForm label {
     width: 200px;

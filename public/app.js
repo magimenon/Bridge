@@ -3,18 +3,19 @@ var app = app || {};
 $(function() {
 
     app.homeItem =  [{
-        name : "Candidate",
-        title :"Candidate",
-        description:"" ,
-        route :"candidate"
-
-    },{
         name : "Home",
         title :"Home",
         description:"" ,
         route :"home"
 
     },{
+        name : "Candidate",
+        title :"Candidate",
+        description:"" ,
+        route :"candidate"
+
+    }
+    ,{
         name : "Interviewer",
         title :"Interviewer",
         description:"" ,
