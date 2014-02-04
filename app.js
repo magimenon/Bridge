@@ -208,11 +208,13 @@ db.open(function(err, db) {
 });
 
 candidate.findById = function(req, res) {
+    console.log("find by id")
     var id = req.params.id;
+    console.log(req.params.id);
     console.log('Retrieving wine: ' + id);
-    db.collection('wines', function(err, collection) {
-        collection.findOne({'_id':new BSON.ObjectID(id)}, function(err, item) {
-            res.send(item);
+    db.collection('candidate', function(err, collection) {
+        collection.find({"name":id}).toArray(function(err, items) {
+            res.send(items);
         });
     });
 };
@@ -282,7 +284,7 @@ var populateDB = function() {
             emailId: "abc@gmail.com",
             SkillSet: [{"JavaScript":2},{"Java" :3},{"PHP" :3}],
             totalYears :3,
-            selected:"Selected"
+            result:"Selected"
 
         },
         {
@@ -290,7 +292,7 @@ var populateDB = function() {
             emailId: "hhgh@gmail.com",
             totalYears :4,
             SkillSet: [{"JavaScript":2},{"Java" :3},{"PHP" :3}],
-            selected:"Selected"
+            result:"Selected"
 
         }];
 

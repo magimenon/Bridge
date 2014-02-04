@@ -2,27 +2,34 @@ var bridge = bridge || {};
 
 bridge.router = Backbone.Router.extend({
     routes: {
-        'candidate' : 'candidate' ,
-        'interviewer':'interviewer',
-        'schedule':'schedule',
-         'analytics':'analytics',
-         'home':'home'
+        'candidate': 'candidate',
+        'interviewer': 'interviewer',
+        'schedule': 'schedule',
+        'analytics': 'analytics',
+        'home': 'home',
+        "search/:query": "search"
     },
-    interviewer : function(){
-        bridge.employeersViewObj = new bridge.employersView();
+
+    search: function (value) {
+        console.log(value);
+        bridge.employeersViewObj = new bridge.candidateContainerView({"search": value});
+
     },
-    candidate : function(){
-        bridge.employeersViewObj = new bridge.employersView();
-    } ,
-    schedule :function(){
+    interviewer: function () {
+        bridge.employeersViewObj = new bridge.candidateContainerView();
+    },
+    candidate: function () {
+        bridge.employeersViewObj = new bridge.candidateContainerView();
+    },
+    schedule: function () {
         bridge.scheduleViewObj = new bridge.analytics();
         bridge.scheduleViewObj.render();
     },
-    analytics :function(){
+    analytics: function () {
         bridge.analyticsObj = new bridge.analytics();
         bridge.analyticsObj.render();
     },
-    home:function() {
+    home: function () {
         new bridge.HomeView(app.homeItem);
     }
 })

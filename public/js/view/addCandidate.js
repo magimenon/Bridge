@@ -1,6 +1,6 @@
 var bridge = bridge || {};
 
-bridge.addEmployee = Backbone.View.extend({
+bridge.addCandidate = Backbone.View.extend({
     template: _.template($('#addCandidate').html()),
     events: {
         "click #Delete": "updateEmployee",
@@ -43,7 +43,7 @@ bridge.addEmployee = Backbone.View.extend({
 
         });
         console.log(formData.SkillSet)
-        formData.selected = $('#Result').value ? $('#Result').value : "";
+        formData.result = $('#Result').value ? $('#Result').value : "";
         return formData;
     },
     addCandidate: function (e) {
@@ -55,7 +55,7 @@ bridge.addEmployee = Backbone.View.extend({
     },
     removeForm: function (e) {
         this.remove();
-        bridge.employeersViewObj = new bridge.employersView();
+         new bridge.candidateContainerView();
     },
     updateEmployee: function (e) {
         e.preventDefault();

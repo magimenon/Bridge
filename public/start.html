@@ -24,8 +24,9 @@
 
 <script id="candidateHeaderTemplate" type="text/template">
   <div id="mid-Section" class="mid-Section">
+
       <div id="addDelUpd" ></div>
-      <button id="add-employee" class="btn btn-primary ">Add</button>
+      <button id="add-employee" class="btn btn-primary">Add</button>     <input type="search" id="search" class="add">
      <div id="row-container">
         <div class="col-md-4">NAME</div>
         <div class="col-md-4">EMAIL</div>
@@ -39,10 +40,12 @@
 <label for="name">NAME: </label><input id="name"   class="text-input" placeholder="Name" type="text" />   </br>
 <label for="emailId">EMAIL: </label><input id="emailId"  class="text-input"  placeholder= "E-mail" type="email" />   </br>
 <label for="totalYears">TOTAL YEARS: </label><input id="totalYears"  class="text-input"  placeholder= "Years" type="text" />  </br>
-<div id="skillSet">
-    <label for="SkillSet">Skill: </label><input class="SkillSet text-input" class="text-input"  placeholder= "SkillSet" type="text" />
-    <input class="years text-input" placeholder= "Years" type="number" />
-    <button id="addSkillSet" class="routeButton">Add</button>
+<div class="skillSetCollection">
+        <div class="skill">
+        <label for="SkillSet">Skill: </label><input class="SkillSet text-input" class="text-input"  placeholder= "SkillSet" type="text" />
+        <input class="years text-input" placeholder= "Years" type="number" />
+        <button class="addSkillSet" class="routeButton">Add</button>  </br>
+        </div>
 </div>
 
     <label for="Result">Result: </label> <select class="text-input" id="Result">
@@ -66,8 +69,9 @@
         <div id="skillSet">
         <% for(var i=0 ;i < SkillSet.length  ;i++){
            _.each(SkillSet[i] ,function( val,key){ %>
+            <div class="skill">
             <label for="SkillSet">SkillSet </label>
-            <select class="text-input">
+            <select class="SkillSet text-input">
             <option value=<%= key%> ><%= key %></option>
             <option value="JavaScript">JavaScript</option>
             <option value="Java">Java</option>
@@ -75,15 +79,21 @@
            </select>
             <input class="totalYears text-input"  value = <%= val ? val:0 %>  type="number" />
             <%  if( i === SkillSet.length-1) { %>
-            <button class="routeButton" id="addSkillSet">Add</button>
+            <button class="addSkillSet">Add</button>
             <% }  %>
+                </div>
             </br>
             <%  }) %>
 
       <%  } %>
  
         </div> </br>
-
+        <label for="Result">Result: </label> <select class="text-input" id="Result">
+        <option value=<%= result ? result:0 %> ><%= result ? result:0 %></option>
+        <option value="saab">Selected</option>
+        <option value="opel">Rejected</option>
+    </select>
+        </br>
         <button class="button routeButton" id="Delete">Delete</button>
         <button class="routeButton" id="Update">Update</button>
     </form>
@@ -128,13 +138,13 @@
 <script src="lib/backbone.js"></script>
 <script src="js/view/comboBoxView.js"></script>
 <script src="js/model/startModel.js"></script>
-<script src="js/model/EmployeeModel.js"></script>
-<script src="js/collection/EmployeeModelCol.js"></script>
-<script src="js/view/deleteEmployee.js"></script>
- <script src="js/view/addEmployee.js"></script>
-<script src="js/view/EmployeeView.js"></script>
-<script src="js/view/employeersView.js"></script>
-<script src="js/view/StartView.js"></script>
+<script src="js/model/CandidateModel.js"></script>
+<script src="js/collection/CandidateModelCol.js"></script>
+<script src="js/view/deleteCandidate.js"></script>
+ <script src="js/view/addCandidate.js"></script>
+<script src="js/view/candidateView.js"></script>
+<script src="js/view/candidateContainerView.js"></script>
+<script src="js/view/HomeView.js"></script>
 <script src="js/view/scheduleInterview.js"></script>
 <script src="js/view/scheduleView.js"></script>
 <script src="js/view/analyticsView.js"></script>

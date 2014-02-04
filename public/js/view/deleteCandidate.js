@@ -1,6 +1,6 @@
 var bridge = bridge || {} ;
 
-bridge.deleteEmployee = Backbone.View.extend({
+bridge.deleteCandidate = Backbone.View.extend({
     template : _.template($('#deleteCandidate').html()),
     events :{
         "click #Delete" : "deleteCandidate" ,
@@ -40,7 +40,7 @@ bridge.deleteEmployee = Backbone.View.extend({
 
             });
             console.log(formData.SkillSet)
-            formData.selected = $('#Result').value ? $('#Result').value : "";
+            formData.result = $('#Result').value ? $('#Result').value : "";
 
         }
         validateForm("deleteCandidateForm");
