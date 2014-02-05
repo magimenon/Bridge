@@ -187,6 +187,7 @@ app.get('/profile', requiredAuthentication, function (req, res) {
     res.send('Profile page of '+ req.session.user.username +'<br>'+' click to <a href="/logout">logout</a>');
 });
 var candidate    = {};
+var interviewer = {};
 var mongo = require('mongodb');
 
 var Server = mongo.Server,
@@ -198,7 +199,14 @@ db = new Db('candidateList', server);
 
 db.open(function(err, db) {
     if(!err) {
-        console.log("Connected to 'winedb' database");
+        console.log("Connected to 'interviewer' database");
+        db.collection('interviewer', {strict:true}, function(err, collection) {
+            if (err) {
+                console.log("The 'interviewer' collection doesn't exist. Creating it with sample data...");
+                populateInterviewerDB();
+            }
+        });
+
         db.collection('candidate', {strict:true}, function(err, collection) {
             if (err) {
                 console.log("The 'candidate' collection doesn't exist. Creating it with sample data...");
@@ -207,6 +215,105 @@ db.open(function(err, db) {
         });
     }
 });
+
+var populateInterviewerDB = function() {
+
+    var employee = [
+        {
+            name: "Mahesh",
+            emailId: "abc@gmail.com",
+            SkillSet: [{"JavaScript":2},{"Java" :3},{"PHP" :3}],
+            totalYears :3
+
+
+        },
+        {
+            name: "Kevin",
+            emailId: "hhgh@gmail.com",
+            totalYears :4,
+            SkillSet: [{"JavaScript":2},{"Java" :3},{"PHP" :3}]
+
+        }];
+
+    db.collection('interviewer', function(err, collection) {
+        collection.insert(interviewer, {safe:true}, function(err, result) {});
+    });
+
+};
+
+
+
+
+
+interviewer.findById = function(req, res) {
+    console.log("find by id")
+    var id = req.params.id;
+    console.log(req.params.id);
+    console.log('Retrieving employee: ' + id);
+    db.collection('interviewer', function(err, collection) {
+        collection.find({"name":id}).toArray(function(err, items) {
+            res.send(items);
+        });
+    });
+};
+
+interviewer.addCandidate = function(req, res) {
+    var value = req.body;
+    console.log('Adding interviewer: ' + JSON.stringify(value));
+    db.collection('interviewer', function(err, collection) {
+        collection.insert(value, {safe:true}, function(err, result) {
+            if (err) {
+                res.send({'error':'An error has occurred'});
+            } else {
+                console.log('Success: ' + JSON.stringify(result[0]));
+                res.send(result[0]);
+            }
+        });
+    });
+}
+
+interviewer.updateCandidate = function(req, res) {
+    var id = req.params.id;
+    var value = req.body;
+    delete  value._id;
+    console.log('Updating interviewer: ' + id);
+    console.log(JSON.stringify(value));
+    db.collection('interviewer', function(err, collection) {
+        collection.update({'_id':new BSON.ObjectID(id)}, value, {safe:true}, function(err, result) {
+            if (err) {
+                console.log('Error updating interviewer: ' + err);
+                res.send({'error':'An error has occurred'});
+            } else {
+                console.log('' + result + ' document(s) updated');
+                res.send(value);
+            }
+        });
+    });
+}
+
+interviewer.deleteCandidate = function(req, res) {
+    var id = req.params.id;
+    console.log('Deleting interviewer: ' + id);
+    db.collection('interviewer', function(err, collection) {
+        collection.remove({'_id':new BSON.ObjectID(id)}, {safe:true}, function(err, result) {
+            if (err) {
+                res.send({'error':'An error has occurred - ' + err});
+            } else {
+                console.log('' + result + ' document(s) deleted');
+                res.send(req.body);
+            }
+        });
+    });
+}
+
+interviewer.findAll = function(req, res) {
+    db.collection('interviewer', function(err, collection) {
+        collection.find().toArray(function(err, items) {
+            res.send(items);
+        });
+    });
+};
+
 
 candidate.findById = function(req, res) {
     console.log("find by id")
@@ -307,6 +414,14 @@ app.get('/candidate/:id', candidate.findById);
 app.post('/candidate', candidate.addCandidate);
 app.put('/candidate/:id', candidate.updateCandidate);
 app.delete('/candidate/:id', candidate.deleteCandidate);
+
+// for employee
+
+app.get('/interviewer', candidate.findAll);
+app.get('/interviewer/:id', candidate.findById);
+app.post('/interviewer', candidate.addCandidate);
+app.put('/interviewer/:id', candidate.updateCandidate);
+app.delete('/interviewer/:id', candidate.deleteCandidate);
 http.createServer(app).listen(3000);
 
 
