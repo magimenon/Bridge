@@ -8,6 +8,11 @@ bridge.deleteCandidate = Backbone.View.extend({
         "click .addSkillSet": "addSkill"
     },
 
+    initialize : function(){
+
+      this.timer = setInterval(this.updateCandidate.bind(this) ,10000);
+    },
+
     addSkill: function (event) {
         var element = $('.addSkillSet');
         element.remove();
@@ -16,7 +21,14 @@ bridge.deleteCandidate = Backbone.View.extend({
             '<input class="totalYears text-input" placeholder= "Years" type="number" />' +
             '<button class="addSkillSet" class="routeButton">Add</button>  </br></div>');
     },
+
+
+
     updateCandidate : function(){
+        if(!(document.getElementById("deleteCandidateForm"))){
+            clearInterval(this.timer)  ;
+            return;
+        }
         var formData = {};
         var validateForm = function(id){
             formData.name = $('#name')[0].value ? $('#name')[0].value : "";
@@ -55,13 +67,15 @@ bridge.deleteCandidate = Backbone.View.extend({
 
         this.model.save();
         //bridge.collection.set(this.model,[{add: true}, {remove: true},{reset:true}]);
-        this.remove();
+       // this.remove();
     },
+
     deleteCandidate:function () {
 
         this.model.destroy();
         bridge.collection.remove(this.model);
-        this.remove();
+        this.updateCandidate();
+       // this.remove();
 
     },
 

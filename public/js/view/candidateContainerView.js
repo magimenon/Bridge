@@ -14,7 +14,7 @@ bridge.candidateContainerView = Backbone.View.extend({
      this.listenTo(bridge.collection ,"add" ,this.renderEmployee);
      this.listenTo(bridge.collection ,"reset" ,this.render);
      this.listenTo(bridge.collection ,"remove" ,this.render);
-     this.listenTo(bridge.collection, "change", this.render);
+    // this.listenTo(bridge.collection, "change", this.render);
 
 
 
