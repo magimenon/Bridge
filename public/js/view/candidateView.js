@@ -13,9 +13,7 @@ bridge.candidateView = Backbone.View.extend({
         })
         $('#mid-section-container').html(this.deleteCandidateView.render().el);
 
-        setTimeout(function () {
-            $('#deleteCandidateForm').addClass("scale");
-        }, 0)
+
 
     },
 
