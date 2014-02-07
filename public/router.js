@@ -22,8 +22,8 @@ bridge.router = Backbone.Router.extend({
         bridge.employeersViewObj = new bridge.candidateContainerView();
     },
     schedule: function () {
-        bridge.scheduleViewObj = new bridge.analytics();
-        bridge.scheduleViewObj.render();
+       bridge.scheduleContainerViewObj = new bridge.scheduleContainerView();
+        bridge.scheduleContainerViewObj.selectCandidate();
     },
     analytics: function () {
         bridge.analyticsObj = new bridge.analytics();

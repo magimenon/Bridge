@@ -28,9 +28,11 @@
       <div id="addDelUpd" ></div>
       <button id="add-employee" class="btn btn-primary">Add</button>     <input type="search" id="search" class="add">
      <div id="row-container">
+         <div>
         <div class="col-md-4">NAME</div>
         <div class="col-md-4">EMAIL</div>
         <div class="col-md-4">TOTAL YEARS</div>
+         </div>
         </div>
      </div>
 </script>
@@ -132,6 +134,27 @@
    coming soon...
 
 </script>
+
+<script id="selectCandidateCont" type="text/template">
+   Select a candidate
+    <div id="selectCanCont">
+        <div class="header">
+        <div class="col-md-4">Select</div>
+        <div class="col-md-4">NAME</div>
+        <div class="col-md-4">EMAIL</div>
+        <div class="col-md-4">TOTAL YEARS</div>
+        </div>
+    </div>
+
+</script>
+
+<script id="SelectcandidateTemplate" type="text/template">
+    <div class="keyClick">
+        <input type="radio" value=<%= this %>><div class="col-md-4"><%= name %></div>
+        <div class="col-md-4"><%= emailId %></div>
+        <div class="col-md-4"><%= totalYears %></div>
+    </div>
+</script>
     
 <script src="lib/jquery-1.7.1.min.js"></script>
 <script src="lib/underscore-min.js"></script>
@@ -146,8 +169,9 @@
 <script src="js/view/candidateContainerView.js"></script>
 <script src="js/view/HomeView.js"></script>
 <script src="js/view/scheduleInterview.js"></script>
-<script src="js/view/scheduleView.js"></script>
+<script src="js/view/scheduleContainerView.js"></script>
 <script src="js/view/analyticsView.js"></script>
+<script src="js/view/scheduleView.js"></script>
 <script src="router.js"></script>
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 <!--<script src="//blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>-->
