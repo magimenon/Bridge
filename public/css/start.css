@@ -1,6 +1,7 @@
 .container {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 h4 {
@@ -73,5 +74,9 @@ button:hover {
 #pageHeader a {
     font-size: 15px;
     float: right;
+}
+
+.check {
+    margin: 0px;
 }
 

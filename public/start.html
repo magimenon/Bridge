@@ -139,10 +139,10 @@
    Select a candidate
     <div id="selectCanCont">
         <div class="header">
-        <div class="col-md-4">Select</div>
+        <div class="col-md-1">Select</div>
         <div class="col-md-4">NAME</div>
         <div class="col-md-4">EMAIL</div>
-        <div class="col-md-4">TOTAL YEARS</div>
+        <div class="col-md-3">TOTAL YEARS</div>
         </div>
     </div>
 
@@ -150,10 +150,24 @@
 
 <script id="SelectcandidateTemplate" type="text/template">
     <div class="keyClick">
-        <input type="radio" value=<%= this %>><div class="col-md-4"><%= name %></div>
+        <div class="col-md-1"><input type="checkbox" class="check"></div>
+        <div class="col-md-4"><%= name %></div>
         <div class="col-md-4"><%= emailId %></div>
-        <div class="col-md-4"><%= totalYears %></div>
+        <div class="col-md-3"><%= totalYears %></div>
     </div>
+</script>
+
+<script id="matchView" type="text/template">
+  <div class="matchView">
+     <div class="matchViewCandidate">
+         <div><%= name %></div>
+         <div><%= emailId %></div>
+         <div><%= totalYears %></div>
+     </div>
+      <hr>
+      </div>
+  </div>
+
 </script>
     
 <script src="lib/jquery-1.7.1.min.js"></script>
@@ -163,6 +177,7 @@
 <script src="js/model/startModel.js"></script>
 <script src="js/model/CandidateModel.js"></script>
 <script src="js/collection/CandidateModelCol.js"></script>
+<script src="js/model/ScheduleModel.js"></script>
 <script src="js/view/deleteCandidate.js"></script>
  <script src="js/view/addCandidate.js"></script>
 <script src="js/view/candidateView.js"></script>
@@ -172,6 +187,7 @@
 <script src="js/view/scheduleContainerView.js"></script>
 <script src="js/view/analyticsView.js"></script>
 <script src="js/view/scheduleView.js"></script>
+<script src="js/view/matchView.js"></script>
 <script src="router.js"></script>
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 <!--<script src="//blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>-->

@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    overflow: hidden;
 }
 ol, ul {
     list-style: none;
@@ -118,7 +119,7 @@ aside button {
 
 #mid-section-container {
      height: 100%;
-    margin-left: 22%;
+    margin-left: 20%;
     padding-top: 1%;
     width: 90%;
 

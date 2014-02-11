@@ -7,6 +7,8 @@ bridge.scheduleContainerView = Backbone.View.extend({
 
     },
 
+
+
     selectCandidate : function(){
         bridge.schedulecanCollection = new bridge.CandidateModelCol();
         this.listenTo(bridge.schedulecanCollection ,"reset" ,this.render);
