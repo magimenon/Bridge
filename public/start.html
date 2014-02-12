@@ -6,20 +6,23 @@
 <link rel="stylesheet" href="css/start.css">
 </head>
 <body>
-<header id="pageHeader">
-   <div>
-    BRIDGE
-   </div>
-   <a href="http://localhost:3000">Logout</a>
-</header>
-<div id="container">
-    <aside >
+<div id ="pageContainer">
+    <header id="pageHeader">
+        <div>
+            BRIDGE
+        </div>
+        <a href="http://localhost:3000">Logout</a>
+    </header>
+    <div id="container">
+        <aside >
 
-    </aside>
-    <section id="mid-section-container" >
+        </aside>
+        <section id="mid-section-container" >
 
-    </section>
+        </section>
+    </div>
 </div>
+
 
 
 <script id="candidateHeaderTemplate" type="text/template">
@@ -121,7 +124,7 @@
  
     
 <script id="homeTemplate" type="text/template">
-   <button class="routeButton"><%= name %> </button>
+    <div class="routes" ><%= name %></div>
 </script>
 
 <script id="scheduleTemplate" type="text/template">
@@ -189,19 +192,6 @@
 <script src="js/view/scheduleView.js"></script>
 <script src="js/view/matchView.js"></script>
 <script src="router.js"></script>
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>-->
-<!--<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>-->
-<!--<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-audio.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-video.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>-->
-<!--<script src="//blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>-->
-<!--<script src="js/fileUpload/file_upload.js"></script>-->
 <script src="app.js"></script>
 </body>
 </html>

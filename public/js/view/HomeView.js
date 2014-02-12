@@ -10,6 +10,9 @@ bridge.HomeView = Backbone.View.extend({
         bridge.scheduleInterviewObj = new bridge.scheduleInterview();
         bridge.scheduleInterviewObj.render();
         this.render();
+                setTimeout(function(){
+          document.getElementsByTagName("aside")[0].style.left = "0px";
+        },1000)
     },
 
     render : function(){
@@ -34,7 +37,7 @@ bridge.homeItemView = Backbone.View.extend({
     template : _.template($('#homeTemplate').html()) ,
 
      events : {
-      'click .routeButton' : "doAction"
+      'click .routes' : "doAction"
      },
 
     doAction : function(obj){
