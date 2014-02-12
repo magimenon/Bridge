@@ -28,6 +28,8 @@ aside {
     border-right: 1px solid;
     transition-property: left;
     transition-duration: .5s;
+    float: left;
+
 }
 
 .routes {
@@ -43,4 +45,16 @@ aside {
 
 .routes:hover {
    background-color: #ef8d31;
+}
+
+
+.keyClick {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: 30px;
+    text-align: center;
+    border:1px solid;
+    padding-top: 20px;
+    border-radius: 10px;
 }
